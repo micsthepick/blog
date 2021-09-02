@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>urh on micsthepick&#39;s blog</title>
+    <link>https://micsthepick.github.io/blog/tags/urh/</link>
+    <description>Recent content in urh on micsthepick&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://micsthepick.github.io/blog/tags/urh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IR and RF remote hacking</title>
+      <link>https://micsthepick.github.io/blog/post/ir_rf_remote_hacking/</link>
+      <pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://micsthepick.github.io/blog/post/ir_rf_remote_hacking/</guid>
+      <description>Introduction In this blog post, I will describe the methods I used to remote control various devices by spoofing Infrared (IR) and Radio Frequency (RF) signals, i.e. a basic replay attack.
+Vulnerable devices Not all devices will be vulnerable to this style of attack, for example, modern car key fobs will use rolling codes or some more sophisticated form of attack that only lets one code be used once. However common home items such as TVs, DVD players, Fans and Lights will likely be vulnerable to this attack (but since they are not likely to get stolen from this attack, it&amp;rsquo;s not a huge security concern more than a nuisance, and most likely you could just buy the same remote from another device and use that already)</description>
+    </item>
+    
+  </channel>
+</rss>

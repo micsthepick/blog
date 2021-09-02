@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IR and RF remote hacking</title>
+        <base href="https://micsthepick.github.io/blog/">
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #FFAA00;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://micsthepick.github.io/blog/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/css.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.87.0" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">IR and RF remote hacking</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/micsthepick/"><i class="fab fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/michael-pannekoek-007b63104/"><i class="fab fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/4678667/micsthepick"><i class="fab fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>IR and RF remote hacking</h2>
+        <h5>August 26, 2021</h5>
+        
+<a href="https://micsthepick.github.io/blog/tags/audio"><kbd class="item-tag">audio</kbd></a>
+
+<a href="https://micsthepick.github.io/blog/tags/audaicty"><kbd class="item-tag">audaicty</kbd></a>
+
+<a href="https://micsthepick.github.io/blog/tags/urh"><kbd class="item-tag">urh</kbd></a>
+
+<a href="https://micsthepick.github.io/blog/tags/replay-attack"><kbd class="item-tag">replay-attack</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h2 id="introduction">Introduction</h2>
+<p>In this blog post, I will describe the methods I used to remote control various devices by spoofing Infrared (IR) and Radio Frequency (RF) signals, i.e. a basic replay attack.</p>
+<h2 id="vulnerable-devices">Vulnerable devices</h2>
+<p>Not all devices will be vulnerable to this style of attack, for example, modern car key fobs will use rolling codes or some more sophisticated form of attack that only lets one code be used once. However common home items such as TVs, DVD players, Fans and Lights will <em>likely</em> be vulnerable to this attack (but since they are not likely to get stolen from this attack, it&rsquo;s not a huge security concern more than a nuisance, and most likely you could just buy the same remote from another device and use that already)</p>
+<h2 id="ok-my-device-is-vulnerable-but-whats-the-point-of-all-this">Ok, my device is vulnerable, but what&rsquo;s the point of all this?</h2>
+<p>There are two main reasons for trying this attack. The first reason is to just simply learn more about hacking and replay attacks, and perhaps a bit of signal processing and electronics as well.<br>
+The other reason is that you could use this style of attack to make a non IOT device that still has a remote control into a IOT device. This blog post does not yet cover the details for that, perhaps that&rsquo;s a good idea for a future post.</p>
+<h2 id="required-gear">Required gear</h2>
+<p>When I decided to do this project, I tried to use as many common items that you might have if you are interested in electronics or similar hobbies.<br>
+You will need a computer with a microphone/line-level input (preferably one with 192 Khz and a good SNR, but you might be able to make do with 48 or 44.1 KHz). You also will need to install Audacity, or some signal processing toolset that can do the same things as in this blog post. There are two custom nyquist plugins that need to be replicated if you decide to not use Audacity.</p>
+<p>For RF reception/transmission, A software defined radio (SDR) would make this easier, but you can use an FM radio and a raspberry pi like I did.</p>
+<p>For IR reception/transmission, you will need an IR photodiode. Look out for photoresistors or phototransistors, as they wil <strong>NOT</strong> work well for reception, due to a slow response time, and will not transmit. If you have spare parts from an old Nintendo Wii lying around, the sensor bar has a set of photodiodes that you can use. To transmit a signal, you will need either a pre built IR blaster, or you could use a snap kit like what I used (electronics 303), or the breadboard equivalent: NPN or PNP transistor, 2 resistors, optionally a visible light LED, and a headphone connector - you can strip an old pair of headphones/earphones) for the headphones connector, I was able to just use a stereo RCA jack pushed into &ldquo;?1&rdquo;, which also subtracts one stereo signal from the other.</p>
+<p>there is also the possibility to buy prebuilt devices such as <a href="https://jumpjack.wordpress.com/2008/05/20/worlds-cheapest-remote-control-replicator-just-1/">the ones in this blog post by jumpjack</a></p>
+<div class="text-center">
+  <figure class="figure">
+    <img src="photodiode.JPG" alt="These are photodiodes from the sensor bar, they look like LEDs" style="max-height:400px;"/>
+    <figcaption class="figure-caption" style="margin-bottom: 1em;">Photodiode.</figcaption>
+  </figure> 
+</div>
+<div class="text-center">
+  <figure class="figure">
+    <img src="photoresistor.JPG" alt="This is a how a photoresistor looks like, it is flat and has red curly traces" style="max-height:400px; vertical-align: bottom;"/>
+    <figcaption class="figure-caption" style="margin-bottom: 1em;">Photoresistor.</figcaption>
+  </figure> 
+</div>
+<p>From the above images, you can see that one electronics kit I had advertises a component as a phototransistor, when in reality it appears as if it is a photoresistor. Either way, this component is not going to work well.</p>
+<h3 id="controlling-the-tv">controlling the tv</h3>
+<p>This is where I started.</p>
+<p>First thing is to record the IR signal</p>
+<p>If you already have an IR reciever, then skip ahead to <a href="#recording-a-signal">recording a signal</a></p>
+<h4 id="building-a-transciever">building a transciever</h4>
+<p>You will need an audio cable, either a stereo rca cable (for snap kits 303), or a stripped headphones cable (breadboard or snap kits)
+connect both stereo channel leads to each end of the connector, making sure not to connect to ground. (In a headphone cable it should be the green and red cables). What this does is give us the difference between L and R, so if transmitting, make sure to transmit with one channel out of phase with the other.</p>
+<h4 id="recording-a-signal">recording a signal</h4>
+<ol>
+<li>Open Audacity, and plug in your reciever.</li>
+<li>Make sure that the correct microphone/line-level input is selected in audacity.</li>
+<li>Make sure the Project Rate (bottom left) is set to the same sample rate as the microphone.</li>
+<li>Hit record to start recording, and point the remote at the reciever, and press the desired button.</li>
+<li>filter out the square wave channel: look for where the remote is pressed in the signal, and find the signal that looks cleanest and most like a square wave.</li>
+</ol>
+<ul>
+<li>click on the triangle at the top left of the track and select &ldquo;Split stereo to mono</li>
+<li>If wired like my transciever, both channels should look about the same but inverted, in that case invert one channel, and select both, and do &ldquo;tracks -&gt; Mix -&gt; Mix and render&rdquo; on the alt menu at the top.</li>
+<li>otherwise, get rid of the other channel, it will not be necessary</li>
+</ul>
+<h4 id="filtering-a-signal">filtering a signal</h4>
+<p>At this point, you should now have a square wave signal on a single track. If you are lucky, you also have a sine wave embedded in that square wave signal.</p>
+<ul>
+<li>If so, all you need to do is use a band pass filter (effect -&gt; filter curve) which only lets frequencies around 37-39 Khz through (draw a spike at 0 db in that range and a large negative number everywhere else), and then you can amplify, and hopefully send that straight through the output into an amplifier circuit to the photodiode. (remembering to pan left or invert one channel if using the L-R trick). If for some reason your sound card does not support
+Otherwise, perhaps you could only record at 48 or 44.1 KHz (or worse?) and all you have is a square wave.</li>
+</ul>
+<p>If the square wave does not drift to the center, it should be easy enough to just turn the signle track into a stereo one: copy and paste the track, click the triangle at the top left of the upper track and choose &ldquo;make stereo track&rdquo;. Now you can use <a href="https://github.com/Gia90/IR-Converter">https://github.com/Gia90/IR-Converter</a> You may need to pan left or split the stereo track, invert one channel and make it stereo again if you use the L-R setup for your IR transmitter.</p>
+<p>suppose there is some DC protection happening, and the square wave drits towards the center - don&rsquo;t worry, I&rsquo;ve found a way to partially filter it out.</p>
+<ol>
+<li>Copy and paste the signal so that there is a copy.</li>
+<li>open the nyquist prompt with (&ldquo;Tools&rdquo; -&gt; &ldquo;Nyquist Prompt&hellip;&quot;).</li>
+<li>Now paste the follwing script in:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(s-min *track* (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-1</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-2</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-3</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-4</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-5</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-6</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-7</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-8</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-9</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-10</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-11</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-12</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-13</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-14</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-15</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-16</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-17</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-18</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-19</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">-20</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">1</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">2</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">3</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">4</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">5</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">6</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">7</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">8</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">9</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">10</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">11</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">12</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">13</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">14</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">15</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">16</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">17</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">18</span> *sound-srate*)) (s-min (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">19</span> *sound-srate*)) (shift-time *track* (<span style="color:#a6e22e">/</span> <span style="color:#ae81ff">20</span> *sound-srate*))))))))))))))))))))))))))))))))))))))))))
+</code></pre></div><p>Essentially what this does is maintain the lowest part of a signal around that point for 20 samples. For longer periods of no change, this effect will need to be repeated more than once.
+4. Run the script on just the lower track until there are no vertical jumps left
+5. Invert the signal on the lower track and mix both tracks together
+6. Now run this other script to clean up the square wave (adjusting 0.2 to be the threshold where the signal goes from on to off)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(s-min (mult (s-max (diff *track* <span style="color:#ae81ff">0.2</span>) <span style="color:#ae81ff">0</span>) <span style="color:#ae81ff">1000</span>) <span style="color:#ae81ff">1</span>)
+</code></pre></div><ol start="7">
+<li>now you can safely run the IR-converter script (In fact, the above script can be simplified to just <code>(diff *track* 0.2)</code>) or you can just use this combined script:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(mult (s-min (mult (s-max (diff *track* <span style="color:#ae81ff">0.2</span>) <span style="color:#ae81ff">0</span>) <span style="color:#ae81ff">100000</span>) <span style="color:#ae81ff">1</span>) (hzosc <span style="color:#ae81ff">19000</span>))
+</code></pre></div><h4 id="playback-of-a-signal">playback of a signal</h4>
+<p>at this point you should have a signal composed of sine waves at 19 or 38 KHz that are turned on and off rapidly. To play this back, make sure that the signal is panned fully left or right, or depending on how the transmitter is wired, the left and right channels are inverses of each other.
+If you use a blaster with a battery built in, then it is not necessary to build the following circuit.
+If not, you may build either of the following circuits:</p>
+<p><img src="PNP-amp-circuit.JPG" alt="A PNP transistor is in series with a resistor, LED, and IR LED, and the Headphones are in series with a resistor connected to the emitter and base"></p>
+<p><img src="NPN-amp-circuit.JPG" alt="A NPN transistor is in series with a resistor, LED, and IR LED, and the Headphones are in series with a resistor connected to the emitter and base"></p>
+<p>With my soundcard, I managed to get both 38 KHz signals and 19 KHz signals to work, however if you have a 38 KHz signal, and 38 KHz signals don&rsquo;t work because the sound card filters them out (unlikely, since you probably wouldn&rsquo;t have been able to record it unless you used an external ADC for your mic), then you can convert the 38 KHz signal into a 19 KHz one by a ring oscillator:</p>
+<pre><code class="language-nyquist" data-lang="nyquist">(mult *track* (hzosc 19000))
+</code></pre><h2 id="controlling-rf-devices">controlling RF devices</h2>
+<p>Once I was able to get the TV working, I moved on to a RF remote. Recording the sample without a SDR can be quite fiddly, but it is much easier with a SDR. I&rsquo;m sure there are plenty of tutorials out there on how to use a SDR, and I don&rsquo;t actually own one, so for the purpose of this tutorial, we will do without, and use a FM radio and raspberry pi (no RF transmitter header needed!).</p>
+<h3 id="recording-the-rf-signal">recording the RF signal</h3>
+<p>This is arguably the most fiddly part. You need to continuously press down a button on the rf remote, while holding it close to the antenna of the radio (which could be contained inside the radio itself), and then sweep up the tuning frequencies until you hear a buzzing noise that goes away when you stop pressing the button. After finding the loudest tuning frequency, you then should try repositioning the remote until it sounds the clearest (minimal noise) and harshest (most harmonics), so that it will have as close to a pure square wave as possible. You will find that the positioning is really sensitive, with even 1mm making a big difference.
+You will need to find this resonant spot with the radio connected to the computer, so I recommend using the sound card to play back the radio if you don&rsquo;t have another way of listening to the radio and recording at the same time (such as with an audio splitter jack), which can be done in Windows by typing &ldquo;system sounds&rdquo; in the search bar, going to the &ldquo;Playback&rdquo; tab, selecting the main output and clicking on &ldquo;Properties&rdquo;, clicking on the &ldquo;levels&rdquo; tab, and setting the level low for the right input - such as &ldquo;Microphone&rdquo; or &ldquo;Front <color> in&rdquo;, depending on which port you used, and unmuting, and then you can adjust the level to your comfort. I recommend keeping the level lower than max on the radio itself to prevent distortion. Some sound cards do not support low latency playback, so in that case go to the &ldquo;Recording&rdquo; tab and select the input device, go to &ldquo;Properties&rdquo;, go to the &ldquo;Listen&rdquo; tab and click on the &ldquo;Listen to this device&rdquo; toggle, and make sure the right playback device is selected, and hit apply.</p>
+<p>For my radio, connecting to the microphone input of the computer will output the signal inverted from L and R, so I was able to use the subtraction trick to filter out some noise, such as the 50KHz mains buzz. You may not get the same results with your radio. The recording procedure is simmilar to how it was recorded for IR.</p>
+<h3 id="filtering-the-rf-signal">filtering the RF signal</h3>
+<p>This time, we would like to leave the signal as 0s and 1s for each sample, rather than modulating it, so that rpitx can do the modulation for itself
+Follow the instructions from <a href="#filtering-a-signal">filtering a signal</a>, until step 6 (don&rsquo;t do use the IR script). Now export the audio (ctrl-shift-e or &ldquo;File&rdquo; -&gt; &ldquo;Export&rdquo; -&gt; &ldquo;Export audio&rdquo;, using the following settings: &ldquo;Save as type&rdquo; = &ldquo;Other uncompressed files&rdquo;, &ldquo;Header&rdquo; = &ldquo;Raw (header-less)&rdquo;, &ldquo;Encoding&rdquo; = &ldquo;32-bit float&rdquo;. Remember the samplerate that you export as - this is the project samplerate. I would recommend appending this to the filename to easily remember. Saving as 32-bit floats will save a conversion step when running rpitx.</p>
+<h3 id="installation-of-rpitx">installation of rpitx</h3>
+<p>make sure you have a functioning image of raspbian, preferably the latest Raspbian Lite installation. Follow the instructions on <a href="https://github.com/F5OEO/rpitx">https://github.com/F5OEO/rpitx</a> .</p>
+<h4 id="illegal-instruction">Illegal instruction</h4>
+<p>I would recommend running csdr after installing rpitx to make sure that it runs correctly, because on the first generation raspberry pi, the neon 
+If after compiling you get an error running csdr that looks like &ldquo;illegal instruction&rdquo;, then you may have to compile without NEON - see <a href="https://github.com/ha7ilm/csdr/issues/42">https://github.com/ha7ilm/csdr/issues/42</a> .</p>
+<h4 id="moving-the-signal-to-the-raspberry-pi">Moving the signal to the raspberry pi</h4>
+<p>You probably want to copy the signal to the raspberry pi with a USB drive, but you might also be able to use the sd card to copy it directly.
+If you want to use the USB drive, and you have raspbian lite installation, you will need to manually mount the usb drive.
+To do so, make a new folder (can be whatever name) in media: <code>sudo mkdir /media/USBDRIVE</code>, and find the usb drive name on the system <code>sudo fdisk -l</code>. Generally, it should be a device like <code>sda1</code> or <code>sdb1</code>, etc. Often I just use <code>ls -l /dev/sd*</code>, but that might not always work. once you have the path the the device, e.g. <code>/dev/sda1</code>, you can run <code>sudo mount /dev/sda1 /media/USBDRIVE</code>, replacing sda1 and USBDRIVE appropriately. If you want to edit the files on the mounted drive without using sudo, you should instead use <code>sudo mount /dev/sda1 /media/USBDRIVE -o uid=pi,gid=pi</code> (replacing as necessary).</p>
+<h3 id="transmitting-the-rf-signal">Transmitting the RF signal</h3>
+<p>All the devices I&rsquo;ve seen use ASK to encode the data stream. (In fact if they didn&rsquo;t, it would be hard to actually determine the data by using a regular FM/AM radio.) So to transmit the data with rpitx, all you need to do is tell rpitx to transmit the data at the same rate as you exported it. The basic syntax of the command is as follows: <code>cat filename.192000.f32.raw | csdr dsb_gain 4.0 | csdr dsb_fc | sudo rpitx -i - -f 433920 -s 192000</code>. here <code>filename.192000.f32.raw</code> should be replaced with your file, <code>192000</code> with the samplerate that the file was exported with, and finally <code>433920</code> the radio frequency that the remote/reciever operate at - which is most likely 422290, but if that does not work, you can look at spec sheets for the oscillator in the remote if you take it apart, or perhaps look at the fccid.io listing, or listing for a similar product.</p>
+</div>
+
+    
+    
+    
+
+    
+    
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

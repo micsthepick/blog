@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on micsthepick&#39;s blog</title>
+    <link>https://micsthepick.github.io/blog/tags/</link>
+    <description>Recent content in Tags on micsthepick&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://micsthepick.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>audaicty</title>
+      <link>https://micsthepick.github.io/blog/tags/audaicty/</link>
+      <pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://micsthepick.github.io/blog/tags/audaicty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>audio</title>
+      <link>https://micsthepick.github.io/blog/tags/audio/</link>
+      <pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://micsthepick.github.io/blog/tags/audio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>replay-attack</title>
+      <link>https://micsthepick.github.io/blog/tags/replay-attack/</link>
+      <pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://micsthepick.github.io/blog/tags/replay-attack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>urh</title>
+      <link>https://micsthepick.github.io/blog/tags/urh/</link>
+      <pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://micsthepick.github.io/blog/tags/urh/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
