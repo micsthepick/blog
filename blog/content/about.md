@@ -12,9 +12,9 @@ I like solving puzzles and hard challenges. I also enjoy seeing what I can do wi
 What do I mean? If it's worthwhile and altruistic then it's worth trying, and giving it your best shot.  
 Don't give up. Not even when you are done, just keep trying.
 
-## what I know
+## What I know
 
-I've completed most of a Batchelor's degree in Computer science and in Mathematics.  
+I've graduated with distinction in a Batchelor's degree - both Computer science and in Mathematics.  
 I can code in Python, JavaScript/TypeScript, Html/Aspx/Cshtml, C++/C, along with various other languages, but I enjoy learning new things, and am happy to learn new langauges and technologies.
 
 ## personal projects
