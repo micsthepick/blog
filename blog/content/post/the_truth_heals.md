@@ -1,5 +1,5 @@
 ---
-title: "THe truth heals"
+title: "The truth heals"
 date: 2023-09-29
 tags: ["philosophy", "truth", "religion"]
 ---
