@@ -14,7 +14,7 @@ And what exactly do I mean by this? In a world where there is an ever increasing
 
 ## The truth heals by setting you free.
 
-"And [you] shall know the truth and the truth shall make [you] free". This isn't just a random quote to me, it has a much deeper meaning. When I have gone through my own mental health struggles, and while going through daily problems, I find that [telling myself (and others) the truth]() directs me on the path of healing and reconcilliation.
+"And [you] shall know the truth and the truth shall make [you] free". This isn't just a random quote to me, it has a much deeper meaning. When I have gone through my own mental health struggles, and while going through daily problems, I find that [telling myself (and others) the truth](https://books.google.com.au/books?id=dQ5GU4p1UKwC) directs me on the path of healing and reconcilliation.
 
 ## A practical example of the truth setting you free
 
