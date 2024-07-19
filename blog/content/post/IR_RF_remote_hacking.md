@@ -26,13 +26,13 @@ there is also the possibility to buy prebuilt devices such as [the ones in this 
 
 <div class="text-center">
   <figure class="figure">
-    <img src="photodiode.JPG" alt="These are photodiodes from the sensor bar, they look like LEDs" style="max-height:400px;"/>
+    <img src="../../photodiode.JPG" alt="These are photodiodes from the sensor bar, they look like LEDs" style="max-height:400px;"/>
     <figcaption class="figure-caption" style="margin-bottom: 1em;">Photodiode.</figcaption>
   </figure> 
 </div>
 <div class="text-center">
   <figure class="figure">
-    <img src="photoresistor.JPG" alt="This is a how a photoresistor looks like, it is flat and has red curly traces" style="max-height:400px; vertical-align: bottom;"/>
+    <img src="../../photoresistor.JPG" alt="This is a how a photoresistor looks like, it is flat and has red curly traces" style="max-height:400px; vertical-align: bottom;"/>
     <figcaption class="figure-caption" style="margin-bottom: 1em;">Photoresistor.</figcaption>
   </figure> 
 </div>
