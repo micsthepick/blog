@@ -65,7 +65,7 @@ At this point, you should now have a square wave signal on a single track. If yo
  - If so, all you need to do is use a band pass filter (effect -> filter curve) which only lets frequencies around 37-39 Khz through (draw a spike at 0 db in that range and a large negative number everywhere else), and then you can amplify, and hopefully send that straight through the output into an amplifier circuit to the photodiode. (remembering to pan left or invert one channel if using the L-R trick). If for some reason your sound card does not support
 Otherwise, perhaps you could only record at 48 or 44.1 KHz (or worse?) and all you have is a square wave.  
   
-If the square wave does not drift to the center, it should be easy enough to just turn the signle track into a stereo one: copy and paste the track, click the triangle at the top left of the upper track and choose "make stereo track". Now you can use [https://github.com/Gia90/IR-Converter](https://github.com/Gia90/IR-Converter) You may need to pan left or split the stereo track, invert one channel and make it stereo again if you use the L-R setup for your IR transmitter.
+If the square wave does not drift to the center, it should be easy enough to just turn the signle track into a stereo one: copy and paste the track, click the triangle at the top left of the upper track and choose "make stereo track". Now you can use https://github.com/Gia90/IR-Converter You may need to pan left or split the stereo track, invert one channel and make it stereo again if you use the L-R setup for your IR transmitter.
   
 suppose there is some DC protection happening, and the square wave drits towards the center - don't worry, I've found a way to partially filter it out.
 
