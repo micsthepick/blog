@@ -8,7 +8,7 @@ tags: ["hardware", "networking", "drivers", "troubleshooting"]
 I happen to have a TP Link Branded Adapter (T3U, but this fix should work on a variety of devices)
 It turns out that a common problem is that it doesn't use USB 3, and when I create a PAN (personal area network) - even if I set it to prefer 5GHz, the speed was abysmally slow.
 
-I searched for quite a while for a fix, and finally stumbled on this beta driver from this TP-LINK post: [https://community.tp-link.com/en/home/forum/topic/653702](Archer T3U Plus is causing BSOD when using a hotspot on Windows 11.)
+I searched for quite a while for a fix, and finally stumbled on this beta driver from this TP-LINK post: <a href="https://community.tp-link.com/en/home/forum/topic/653702">Archer T3U Plus is causing BSOD when using a hotspot on Windows 11.</a>
 
 The install is fairly simple, extract the zip, and run Setup.exe.
 

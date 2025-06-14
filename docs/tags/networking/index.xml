@@ -14,7 +14,7 @@
       
       <guid>https://micsthepick.github.io/blog/post/fixing_my_wifi_adpater/</guid>
       <description>Fixing my Wifi Adapter I happen to have a TP Link Branded Adapter (T3U, but this fix should work on a variety of devices) It turns out that a common problem is that it doesn&amp;rsquo;t use USB 3, and when I create a PAN (personal area network) - even if I set it to prefer 5GHz, the speed was abysmally slow.
-I searched for quite a while for a fix, and finally stumbled on this beta driver from this TP-LINK post: [https://community.</description>
+I searched for quite a while for a fix, and finally stumbled on this beta driver from this TP-LINK post: Archer T3U Plus is causing BSOD when using a hotspot on Windows 11.</description>
     </item>
     
   </channel>
