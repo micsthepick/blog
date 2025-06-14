@@ -22,8 +22,12 @@ in case the link rots I've also saved a web archive capture:
 (web.archive.org)
 
 ## before / after
-before: consistently less than 50mbps with iperf3 direct ip access and a 5GHz hotspot to my Quest 3 512Gb. (Even the home router beats it ~min100 ~max150 ~avg130 with the 5GHz network it provides if I use the internal ip of my PC on that router)  
+before:  
+
+consistently less than 50mbps with iperf3 direct ip access and a 5GHz hotspot to my Quest 3 512Gb. (Even the home router beats it ~min100 ~max150 ~avg130 with the 5GHz network it provides if I use the internal ip of my PC on that router)  
+
 after: 
+
 <div class="text-center">
   <figure class="figure">
     <img src="../../usbtreeview_wifi_adapter.png" alt="USBTreeView depicts losing a HighSpeed device, and gaining a SuperSpeed device - which is the TP-LINK" style="max-height:400px;"/>
