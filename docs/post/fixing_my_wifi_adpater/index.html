@@ -138,7 +138,7 @@
     </div>
 
     <div align="start" class="content"><h1 id="fixing-my-wifi-adapter">Fixing my Wifi Adapter</h1>
-<p>I happen to have a TP Link Branded Adapter (T3U, but this fix should work on a variety of devices)
+<p>I happen to have a TP Link Branded Adapter (T3U, but this fix should work on a variety of devices)<br>
 It turns out that a common problem is that it doesn&rsquo;t use USB 3, and when I create a PAN (personal area network) - even if I set it to prefer 5GHz, the speed was abysmally slow.</p>
 <p>I searched for quite a while for a fix, and finally stumbled on this beta driver from this TP-LINK post: <a href="https://community.tp-link.com/en/home/forum/topic/653702">Archer T3U Plus is causing BSOD when using a hotspot on Windows 11.</a></p>
 <p>The install is fairly simple, extract the zip, and run Setup.exe.</p>
@@ -148,7 +148,7 @@ It turns out that a common problem is that it doesn&rsquo;t use USB 3, and when 
 <pre><code>/web/20250614112350/https://static.tp-link.com/upload/beta/2022/202206/20220601/Realtek_WLAN_1030.44.0531.2021_Win20H1_RS1_Archive3_DUA_0530_U2U3.zip
 </code></pre><p>(web.archive.org)</p>
 <h2 id="before--after">before / after</h2>
-<p>before: consistently less than 50mbps with iperf3 direct ip access and a 5GHz hotspot to my Quest 3 512Gb. (Even the home router beats it ~min100 ~max150 ~avg130 with the 5GHz network it provides if I use the internal ip of my PC on that router)
+<p>before: consistently less than 50mbps with iperf3 direct ip access and a 5GHz hotspot to my Quest 3 512Gb. (Even the home router beats it ~min100 ~max150 ~avg130 with the 5GHz network it provides if I use the internal ip of my PC on that router)<br>
 after:</p>
 <div class="text-center">
   <figure class="figure">
@@ -156,7 +156,7 @@ after:</p>
     <figcaption class="figure-caption" style="margin-bottom: 1em;">USBTreeview</figcaption>
   </figure> 
 </div>
-as pictured above, the device stays in USB 3 mode.
+as pictured above, the device stays in USB 3 mode.  
 <p>Rates:</p>
 <pre><code>[  5]   0.00-1.01   sec  20.4 MBytes   169 Mbits/sec
 [  5]   1.01-2.01   sec  15.1 MBytes   127 Mbits/sec

@@ -5,15 +5,15 @@ tags: ["hardware", "networking", "drivers", "troubleshooting"]
 ---
 
 # Fixing my Wifi Adapter
-I happen to have a TP Link Branded Adapter (T3U, but this fix should work on a variety of devices)
-It turns out that a common problem is that it doesn't use USB 3, and when I create a PAN (personal area network) - even if I set it to prefer 5GHz, the speed was abysmally slow.
+I happen to have a TP Link Branded Adapter (T3U, but this fix should work on a variety of devices)  
+It turns out that a common problem is that it doesn't use USB 3, and when I create a PAN (personal area network) - even if I set it to prefer 5GHz, the speed was abysmally slow.  
 
-I searched for quite a while for a fix, and finally stumbled on this beta driver from this TP-LINK post: <a href="https://community.tp-link.com/en/home/forum/topic/653702">Archer T3U Plus is causing BSOD when using a hotspot on Windows 11.</a>
+I searched for quite a while for a fix, and finally stumbled on this beta driver from this TP-LINK post: <a href="https://community.tp-link.com/en/home/forum/topic/653702">Archer T3U Plus is causing BSOD when using a hotspot on Windows 11.</a>  
 
 The install is fairly simple, extract the zip, and run Setup.exe.
 
 ## DISCLAIMER:
-The above driver is beta, I can't offer a warranty that everything will work, and you'd have to ask TP-LINK directly if you aren't sure about it, and also there may evntually be a driver update more recent (or perhaps there already is, as I stopped once I found a working solution).
+The above driver is beta, I can't offer a warranty that everything will work, and you'd have to ask TP-LINK directly if you aren't sure about it, and also there may evntually be a driver update more recent (or perhaps there already is, as I stopped once I found a working solution).  
 
 in case the link rots I've also saved a web archive capture:
 ```
@@ -22,7 +22,7 @@ in case the link rots I've also saved a web archive capture:
 (web.archive.org)
 
 ## before / after
-before: consistently less than 50mbps with iperf3 direct ip access and a 5GHz hotspot to my Quest 3 512Gb. (Even the home router beats it ~min100 ~max150 ~avg130 with the 5GHz network it provides if I use the internal ip of my PC on that router)
+before: consistently less than 50mbps with iperf3 direct ip access and a 5GHz hotspot to my Quest 3 512Gb. (Even the home router beats it ~min100 ~max150 ~avg130 with the 5GHz network it provides if I use the internal ip of my PC on that router)  
 after: 
 <div class="text-center">
   <figure class="figure">
@@ -30,7 +30,7 @@ after:
     <figcaption class="figure-caption" style="margin-bottom: 1em;">USBTreeview</figcaption>
   </figure> 
 </div>
-as pictured above, the device stays in USB 3 mode.
+as pictured above, the device stays in USB 3 mode.  
 
 Rates:
 ```
@@ -48,6 +48,6 @@ Rates:
 [ ID] Interval           Transfer     Bitrate
 [  5]   0.00-10.02  sec   168 MBytes   141 Mbits/sec                  receiver
 ```
-whilst I didn't record the rates from before changing drivers except by memory, there is at least a 3x improvement over the non-updated version, however if I compare it to the hoem wireless network, it barely eeks out an extra 10 Mbits out of 140 on average - perhaps not insiginificant, but I would not call it statistically significant without doing further testing.
+whilst I didn't record the rates from before changing drivers except by memory, there is at least a 3x improvement over the non-updated version, however if I compare it to the hoem wireless network, it barely eeks out an extra 10 Mbits out of 140 on average - perhaps not insiginificant, but I would not call it statistically significant without doing further testing.  
 
 However the one big benefit to using the Ad-hoc hotspot, is that I can Isolate my quest 3 from the home wifi plus it stays connected to my pc directly, and doesn't migrate to the satellite AP, which would mean horrible speed and latency.
