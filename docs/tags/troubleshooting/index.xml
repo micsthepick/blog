@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>troubleshooting on micsthepick&#39;s blog</title>
+    <link>https://micsthepick.github.io/blog/tags/troubleshooting/</link>
+    <description>Recent content in troubleshooting on micsthepick&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://micsthepick.github.io/blog/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixing my Wifi Adapter</title>
+      <link>https://micsthepick.github.io/blog/post/fixing_my_wifi_adpater/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://micsthepick.github.io/blog/post/fixing_my_wifi_adpater/</guid>
+      <description>Fixing my Wifi Adapter I happen to have a TP Link Branded Adapter (T3U, but this fix should work on a variety of devices) It turns out that a common problem is that it doesn&amp;rsquo;t use USB 3, and when I create a PAN (personal area network) - even if I set it to prefer 5GHz, the speed was abysmally slow.
+I searched for quite a while for a fix, and finally stumbled on this beta driver from this TP-LINK post: [https://community.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,3 +1,9 @@
+---
+title: "Fixing my Wifi Adapter"
+date: 2025-06-14
+tags: ["hardware", "networking", "drivers", "troubleshooting"]
+---
+
 # Fixing my Wifi Adapter
 I happen to have a TP Link Branded Adapter (T3U, but this fix should work on a variety of devices)
 It turns out that a common problem is that it doesn't use USB 3, and when I create a PAN (personal area network) - even if I set it to prefer 5GHz, the speed was abysmally slow.
