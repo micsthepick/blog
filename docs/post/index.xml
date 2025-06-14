@@ -26,5 +26,15 @@
 Vulnerable devices Not all devices will be vulnerable to this style of attack, for example, modern car key fobs will use rolling codes or some more sophisticated form of attack that only lets one code be used once. However common home items such as TVs, DVD players, Fans and Lights will likely be vulnerable to this attack (but since they are not likely to get stolen from this attack, it&amp;rsquo;s not a huge security concern more than a nuisance, and most likely you could just buy the same remote from another device and use that already)</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://micsthepick.github.io/blog/post/fixing_my_wifi_adpater/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://micsthepick.github.io/blog/post/fixing_my_wifi_adpater/</guid>
+      <description>Fixing my Wifi Adapter I happen to have a TP Link Branded Adapter (T3U, but this fix should work on a variety of devices) It turns out that a common problem is that it doesn&amp;rsquo;t use USB 3, and when I create a PAN (personal area network) - even if I set it to prefer 5GHz, the speed was abysmally slow.
+I searched for quite a while for a fix, and finally stumbled on this beta driver from this TP-LINK post: [https://community.</description>
+    </item>
+    
   </channel>
 </rss>

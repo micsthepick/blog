@@ -27,6 +27,16 @@ Vulnerable devices Not all devices will be vulnerable to this style of attack, f
     </item>
     
     <item>
+      <title></title>
+      <link>https://micsthepick.github.io/blog/post/fixing_my_wifi_adpater/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://micsthepick.github.io/blog/post/fixing_my_wifi_adpater/</guid>
+      <description>Fixing my Wifi Adapter I happen to have a TP Link Branded Adapter (T3U, but this fix should work on a variety of devices) It turns out that a common problem is that it doesn&amp;rsquo;t use USB 3, and when I create a PAN (personal area network) - even if I set it to prefer 5GHz, the speed was abysmally slow.
+I searched for quite a while for a fix, and finally stumbled on this beta driver from this TP-LINK post: [https://community.</description>
+    </item>
+    
+    <item>
       <title>About Me</title>
       <link>https://micsthepick.github.io/blog/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
