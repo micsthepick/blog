@@ -1,5 +1,5 @@
 baseURL = "https://micsthepick.com/blog/"
-languageCode = "en-us"
+locale = "en-us"
 title = "micsthepick's blog"
 theme = "minimal"
 publishDir = "../docs"
