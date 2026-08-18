@@ -93,9 +93,9 @@ at this point you should have a signal composed of sine waves at 19 or 38 KHz th
 If you use a blaster with a battery built in, then it is not necessary to build the following circuit.
 If not, you may build either of the following circuits:
 
-![A PNP transistor is in series with a resistor, LED, and IR LED, and the Headphones are in series with a resistor connected to the emitter and base](PNP-amp-circuit.JPG)
+![A PNP transistor is in series with a resistor, LED, and IR LED, and the Headphones are in series with a resistor connected to the emitter and base](../../PNP-amp-circuit.JPG)
 
-![A NPN transistor is in series with a resistor, LED, and IR LED, and the Headphones are in series with a resistor connected to the emitter and base](NPN-amp-circuit.JPG)
+![A NPN transistor is in series with a resistor, LED, and IR LED, and the Headphones are in series with a resistor connected to the emitter and base](../../NPN-amp-circuit.JPG)
 
 With my soundcard, I managed to get both 38 KHz signals and 19 KHz signals to work, however if you have a 38 KHz signal, and 38 KHz signals don't work because the sound card filters them out (unlikely, since you probably wouldn't have been able to record it unless you used an external ADC for your mic), then you can convert the 38 KHz signal into a 19 KHz one by a ring oscillator:
 ```nyquist

@@ -1,94 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Tags on micsthepick&#39;s blog</title>
-		<link>https://micsthepick.com/blog/tags/</link>
-		<description>Recent content in Tags on micsthepick&#39;s blog</description>
-		<generator>Hugo</generator>
-		<language>en-us</language>
-		
-		
-		
-		
-			<lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
-		
-			<atom:link href="https://micsthepick.com/blog/tags/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>Drivers</title>
-				<link>https://micsthepick.com/blog/tags/drivers/</link>
-				<pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
-				<guid>https://micsthepick.com/blog/tags/drivers/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Hardware</title>
-				<link>https://micsthepick.com/blog/tags/hardware/</link>
-				<pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
-				<guid>https://micsthepick.com/blog/tags/hardware/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Networking</title>
-				<link>https://micsthepick.com/blog/tags/networking/</link>
-				<pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
-				<guid>https://micsthepick.com/blog/tags/networking/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Troubleshooting</title>
-				<link>https://micsthepick.com/blog/tags/troubleshooting/</link>
-				<pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
-				<guid>https://micsthepick.com/blog/tags/troubleshooting/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Philosophy</title>
-				<link>https://micsthepick.com/blog/tags/philosophy/</link>
-				<pubDate>Fri, 29 Sep 2023 00:00:00 +0000</pubDate>
-				<guid>https://micsthepick.com/blog/tags/philosophy/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Religion</title>
-				<link>https://micsthepick.com/blog/tags/religion/</link>
-				<pubDate>Fri, 29 Sep 2023 00:00:00 +0000</pubDate>
-				<guid>https://micsthepick.com/blog/tags/religion/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Truth</title>
-				<link>https://micsthepick.com/blog/tags/truth/</link>
-				<pubDate>Fri, 29 Sep 2023 00:00:00 +0000</pubDate>
-				<guid>https://micsthepick.com/blog/tags/truth/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Audaicty</title>
-				<link>https://micsthepick.com/blog/tags/audaicty/</link>
-				<pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
-				<guid>https://micsthepick.com/blog/tags/audaicty/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Audio</title>
-				<link>https://micsthepick.com/blog/tags/audio/</link>
-				<pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
-				<guid>https://micsthepick.com/blog/tags/audio/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Replay-Attack</title>
-				<link>https://micsthepick.com/blog/tags/replay-attack/</link>
-				<pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
-				<guid>https://micsthepick.com/blog/tags/replay-attack/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Urh</title>
-				<link>https://micsthepick.com/blog/tags/urh/</link>
-				<pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
-				<guid>https://micsthepick.com/blog/tags/urh/</guid>
-				<description></description>
-			</item>
-	</channel>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on micsthepick&#39;s blog</title>
+    <link>https://micsthepick.com/blog/tags/</link>
+    <description>Recent content in Tags on micsthepick&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://micsthepick.com/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drivers</title>
+      <link>https://micsthepick.com/blog/tags/drivers/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://micsthepick.com/blog/tags/drivers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hardware</title>
+      <link>https://micsthepick.com/blog/tags/hardware/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://micsthepick.com/blog/tags/hardware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>https://micsthepick.com/blog/tags/networking/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://micsthepick.com/blog/tags/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Troubleshooting</title>
+      <link>https://micsthepick.com/blog/tags/troubleshooting/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://micsthepick.com/blog/tags/troubleshooting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Philosophy</title>
+      <link>https://micsthepick.com/blog/tags/philosophy/</link>
+      <pubDate>Fri, 29 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://micsthepick.com/blog/tags/philosophy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Religion</title>
+      <link>https://micsthepick.com/blog/tags/religion/</link>
+      <pubDate>Fri, 29 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://micsthepick.com/blog/tags/religion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Truth</title>
+      <link>https://micsthepick.com/blog/tags/truth/</link>
+      <pubDate>Fri, 29 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://micsthepick.com/blog/tags/truth/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Audaicty</title>
+      <link>https://micsthepick.com/blog/tags/audaicty/</link>
+      <pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://micsthepick.com/blog/tags/audaicty/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Audio</title>
+      <link>https://micsthepick.com/blog/tags/audio/</link>
+      <pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://micsthepick.com/blog/tags/audio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Replay-Attack</title>
+      <link>https://micsthepick.com/blog/tags/replay-attack/</link>
+      <pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://micsthepick.com/blog/tags/replay-attack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Urh</title>
+      <link>https://micsthepick.com/blog/tags/urh/</link>
+      <pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://micsthepick.com/blog/tags/urh/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>
